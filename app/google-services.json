@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "370951092646",
+    "project_id": "buildyourself-f43ad",
+    "storage_bucket": "buildyourself-f43ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370951092646:android:e0d96c22cfeb1599ab7767",
+        "android_client_info": {
+          "package_name": "com.example.buildyourselfapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370951092646-ga555kcfmp43saqno2c5lfr994c15at8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMnH3zauB8z-SQFAQ0Y4Tf48N1VxNyIYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370951092646-ga555kcfmp43saqno2c5lfr994c15at8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
