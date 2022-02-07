@@ -44,12 +44,18 @@ public class UsersDAL {
     }
 
     public Boolean LogIn(String email, String password){
-        this.currentUser = this.allUsers.stream().filter(user -> email.equals(user.getEmail())&&password.equals(user.getPassword())).findFirst().orElse(null);
+        this.currentUser = this.allUsers.stream().
+                filter(user -> email.equals(user.getEmail())&&
+                password.equals(user.getPassword())).
+                findFirst().
+                orElse(null);
         return this.currentUser!=null?true:false;
     }
 
     private Boolean isEmailExists(String email){
-        User temp = this.allUsers.stream().filter(user -> email.equals(user.getEmail())).findFirst().orElse(null);
+        User temp = this.allUsers.stream().
+                filter(user -> email.equals(user.getEmail())).
+                findFirst().orElse(null);
         return temp!=null?true:false;
     }
 
