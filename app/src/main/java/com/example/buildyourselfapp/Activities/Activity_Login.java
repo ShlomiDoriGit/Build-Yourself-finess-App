@@ -12,13 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.buildyourself.R;
 import com.example.buildyourselfapp.DAL.UsersDAL;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class Activity_Login extends AppCompatActivity implements View.OnClickListener {
 
     private Button register, login;
     private TextView email, password;
-    private FirebaseAuth fAuth;
+ //   private FirebaseAuth fAuth;
 
 
     @Override

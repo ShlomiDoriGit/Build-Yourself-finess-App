@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.buildyourself.R;
 import com.example.buildyourselfapp.DAL.UsersDAL;
 
+import java.util.zip.Inflater;
+
 public class Activity_Plan extends AppCompatActivity {
 
     private ImageView cutImage ;
@@ -55,10 +57,13 @@ public class Activity_Plan extends AppCompatActivity {
         bulk_plan_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Activity_Exercise.class);
-                intent.putExtra("plan", "bulk");
-                intent.putExtra("gender", isMen); // men is true , woman false
-                startActivity(intent);
+                Inflater inflater = new Inflater();
+//                Intent intent = new Intent(getApplicationContext(), Activity_Exercise.class);
+//                intent.putExtra("plan", "bulk");
+//                intent.putExtra("gender", isMen); // men is true , woman false
+//                startActivity(intent);
+ //               inflater.inflate(R.layout.fragment_exercises, , false);
+
             }
         });
     }

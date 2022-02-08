@@ -21,7 +21,7 @@ public class UsersDAL {
     private User currentUser;
 
     private UsersDAL() {
-        mDatabase = FirebaseDatabase.getInstance().getReference(User.class.getSimpleName());
+        mDatabase = FirebaseDatabase.getInstance().getReference().child(User.class.getSimpleName());
         this.allUsers = new ArrayList<>();
         this.listenToUsers();
     }
@@ -36,7 +36,7 @@ public class UsersDAL {
     {
         if(_user != null){
             if(!this.isEmailExists(_user.getEmail())){
-                return this.mDatabase.push().setValue(_user);
+                return this.mDatabase.child(_user.getEmail()).setValue(_user);
             }
         }
         return null;
@@ -48,6 +48,8 @@ public class UsersDAL {
                 password.equals(user.getPassword())).
                 findFirst().
                 orElse(null);
+        Log.d("UsersDAL.listenToUsers", String.valueOf(this.currentUser));
+        Log.d("UsersDAL.listenToUsers", String.valueOf(this.allUsers));
         return this.currentUser!=null?true:false;
     }
 
@@ -65,7 +67,10 @@ public class UsersDAL {
                 allUsers.clear();
                 for (DataSnapshot snp: snapshot.getChildren()) {
                     allUsers.add(snapshot.getValue(User.class));
+                    Log.d("UsersDAL.listenToUsers", "@@@@@@@@@@@@@@");
+                    Log.d("UsersDAL.listenToUsers", String.valueOf(snapshot.getValue(User.class)));
                 }
+
             }
 
             @Override
