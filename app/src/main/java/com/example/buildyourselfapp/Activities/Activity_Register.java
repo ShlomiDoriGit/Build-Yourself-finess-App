@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,13 +24,10 @@ public class Activity_Register extends AppCompatActivity  implements View.OnClic
     private EditText Name, email, password, height, weight;
     private CheckBox male, female;
     private final User user = new User();
-    //private  UsersDAL usersDAL ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-
         findViews();
         initViews();
     }
@@ -67,8 +65,11 @@ public class Activity_Register extends AppCompatActivity  implements View.OnClic
             case R.id.btn_register:
                 if (validateFields()) {
                     if(UsersDAL.getInstance().Register(user) != null){
-                        Log.d("TAJ","success!");
-                        startActivity(new Intent(Activity_Register.this, Activity_Login.class));
+                        Toast.makeText(Activity_Register.this,
+                                "Register success!" ,Toast.LENGTH_SHORT).show();
+
+                                Log.d("TAJ","Register success!");
+                        startActivity(new Intent(Activity_Register.this, Activity_Plan.class));
                     }
                 }
                 break;

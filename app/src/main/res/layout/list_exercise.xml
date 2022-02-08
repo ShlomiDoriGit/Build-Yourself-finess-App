@@ -39,7 +39,7 @@
             android:gravity="bottom"
             android:maxLines="2"
             android:minLines="2"
-            android:text="MOVIE_TITLE"
+            android:text="EXERCISE_TITLE"
             android:textSize="18sp" />
 
         <com.google.android.material.textview.MaterialTextView

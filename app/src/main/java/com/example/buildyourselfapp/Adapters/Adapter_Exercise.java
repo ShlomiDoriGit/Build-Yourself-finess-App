@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.buildyourself.R;
 import com.example.buildyourselfapp.Models.Exercise;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
@@ -27,7 +29,13 @@ public class Adapter_Exercise extends RecyclerView.Adapter<RecyclerView.ViewHold
         this.exercises = exercises;
 
     }
-    public Adapter_Exercise setExerciseItemClickListener(ExerciseItemClickListener exerciseItemClickListener) {
+
+    public Adapter_Exercise(@NonNull FirebaseRecyclerOptions<Exercise> options) {
+     //   super(options);
+    }
+
+    public Adapter_Exercise setExerciseItemClickListener(
+            ExerciseItemClickListener exerciseItemClickListener) {
         this.exerciseItemClickListener = exerciseItemClickListener;
         return this;
     }

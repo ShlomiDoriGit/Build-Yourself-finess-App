@@ -1,6 +1,5 @@
 package com.example.buildyourselfapp.DAL;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -36,7 +35,7 @@ public class UsersDAL {
     public Task<Void> Register(User _user)
     {
         if(_user != null){
-            if(this.isEmailExists(_user.getEmail())){
+            if(!this.isEmailExists(_user.getEmail())){
                 return this.mDatabase.push().setValue(_user);
             }
         }
@@ -75,5 +74,13 @@ public class UsersDAL {
                 Log.e("UsersDAL.listenToUsers",error.getDetails());
             }
         });
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
     }
 }

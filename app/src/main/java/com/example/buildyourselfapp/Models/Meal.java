@@ -8,7 +8,7 @@ public class Meal {
     private Double protein;
     private Double carbs;
     private Double fat;
-    private int numberOfMeal;
+    private int    numberOfMeal;
 
     public Meal() {
     }
