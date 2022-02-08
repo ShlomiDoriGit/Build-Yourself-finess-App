@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.buildyourselfapp"
-        minSdk 24
+        minSdkVersion 24
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -27,6 +27,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    buildToolsVersion '31.0.0'
 }
 
 dependencies {

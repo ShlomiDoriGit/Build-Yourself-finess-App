@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.buildyourself.R;
 import com.example.buildyourselfapp.Models.Exercise;
-import com.example.buildyourselfapp.R;
 import com.google.android.material.textview.MaterialTextView;
+
 import java.util.ArrayList;
 
 

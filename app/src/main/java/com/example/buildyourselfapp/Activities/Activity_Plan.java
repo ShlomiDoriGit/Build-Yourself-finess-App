@@ -1,16 +1,15 @@
 package com.example.buildyourselfapp.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.example.buildyourselfapp.Fragments.ExerciseFragment;
-import com.example.buildyourselfapp.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.buildyourself.R;
+import com.example.buildyourselfapp.Adapters.Adapter_Exercise;
 
 public class Activity_Plan extends AppCompatActivity {
 
@@ -48,7 +47,7 @@ public class Activity_Plan extends AppCompatActivity {
         cut_plan_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ExerciseFragment.class);
+                Intent intent = new Intent(getApplicationContext(), Adapter_Exercise.class);
                 intent.putExtra("plan", "cut");
                 if(isMen) {
                     intent.putExtra("gender", true);
@@ -62,7 +61,7 @@ public class Activity_Plan extends AppCompatActivity {
         bulk_plan_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ExerciseFragment.class);
+                Intent intent = new Intent(getApplicationContext(), Adapter_Exercise.class);
                 intent.putExtra("plan", "bulk");
                 if(isMen) {
                     intent.putExtra("gender", true);

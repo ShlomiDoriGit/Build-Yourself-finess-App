@@ -1,169 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Activity_Register"
+    tools:context="com.example.buildyourselfapp.Activities.Activity_Register"
     android:background="@drawable/bg_png"
     >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:fontFamily="@font/impact"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
+        android:padding="32dp"
+        android:gravity="center"
         >
 
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="16dp"
-            android:text="Register"
-            android:textColor="@color/white"
-            android:textSize="50sp"
-            android:fontFamily="@font/impact"
-            />
+            android:hint="@string/name"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColorHint="@color/white">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent_grey" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColorHint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent_grey" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColorHint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent_grey" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/confirm_password"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColorHint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent_grey" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/height"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColorHint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent_grey" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/weight"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColorHint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent_grey" />
+        </com.google.android.material.textfield.TextInputLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="32dp"
-            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             >
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:textColorHint="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent_grey" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:textColorHint="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent_grey" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:textColorHint="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent_grey" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Confirm password"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:textColorHint="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_confirm"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent_grey" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Height"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:textColorHint="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_height"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent_grey" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Weight"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:textColorHint="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_weight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent_grey" />
-            </com.google.android.material.textfield.TextInputLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <CheckBox
-                    android:id="@+id/checkbox_male"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Male"
-                    android:textColor="@color/white"
-                    android:buttonTint="@color/light_grey"
-                    />
-                <CheckBox
-                    android:id="@+id/checkbox_female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Female"
-                    android:textColor="@color/white"
-                    android:buttonTint="@color/light_grey"
-                    />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btn_register"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/facebook_blue"
-                android:text="Regidter" />
-            <Button
-                android:id="@+id/btn_go_back_to_log_in"
+            <CheckBox
+                android:id="@+id/checkbox_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Go back to log in"
-                android:textAllCaps="false"
-                android:backgroundTint="@color/transparent"
+                android:text="@string/male"
+                android:textColor="@color/white"
+                android:buttonTint="@color/light_grey"
                 />
-
+            <CheckBox
+                android:id="@+id/checkbox_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"
+                android:textColor="@color/white"
+                android:buttonTint="@color/light_grey"
+                />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/facebook_blue"
+            android:text="@string/register" />
+        <Button
+            android:id="@+id/btn_go_back_to_log_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go_back_to_log_in"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/transparent"
+            />
+
     </LinearLayout>
+
 
 </RelativeLayout>

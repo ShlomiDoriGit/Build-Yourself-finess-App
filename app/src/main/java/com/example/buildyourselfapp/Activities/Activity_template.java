@@ -1,10 +1,10 @@
 package com.example.buildyourselfapp.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-import com.example.buildyourselfapp.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.buildyourself.R;
 
 public class Activity_template extends AppCompatActivity {
 
