@@ -36,7 +36,7 @@ public class UsersDAL {
     {
         if(_user != null){
             if(!this.isEmailExists(_user.getEmail())){
-                return this.mDatabase.child(_user.getEmail()).setValue(_user);
+                return this.mDatabase.child(_user.getUsername()).setValue(_user);
             }
         }
         return null;
@@ -66,9 +66,8 @@ public class UsersDAL {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 allUsers.clear();
                 for (DataSnapshot snp: snapshot.getChildren()) {
-                    allUsers.add(snapshot.getValue(User.class));
-                    Log.d("UsersDAL.listenToUsers", "@@@@@@@@@@@@@@");
-                    Log.d("UsersDAL.listenToUsers", String.valueOf(snapshot.getValue(User.class)));
+                    allUsers.add(snp.getValue(User.class));
+                    Log.d("UsersDAL.listenToUsers@@@@@@@@@@@@@", String.valueOf(snp.getValue(User.class)));
                 }
 
             }

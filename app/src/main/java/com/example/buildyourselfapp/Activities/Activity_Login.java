@@ -17,13 +17,14 @@ public class Activity_Login extends AppCompatActivity implements View.OnClickLis
 
     private Button register, login;
     private TextView email, password;
- //   private FirebaseAuth fAuth;
+    private UsersDAL userDAL;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        this.userDAL = UsersDAL.getInstance();
         findViews();
         initViews();
     }
@@ -54,7 +55,7 @@ public class Activity_Login extends AppCompatActivity implements View.OnClickLis
                     && (!emailTxt.isEmpty() && !passwordTxt.isEmpty())) {
                 Log.d("TAJ", "emailTxt: " + emailTxt + " passwordTxt: " + passwordTxt);
 
-                if(UsersDAL.getInstance().LogIn(emailTxt,passwordTxt)) {
+                if(userDAL.LogIn(emailTxt,passwordTxt)) {
                     startActivity(new Intent(Activity_Login.this, Activity_Plan.class));
                 }
                 else{

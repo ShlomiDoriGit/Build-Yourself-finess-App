@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.buildyourself.R;
 import com.example.buildyourselfapp.Adapters.Adapter_Exercise;
 import com.example.buildyourselfapp.Models.Exercise;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+//import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
@@ -28,25 +28,25 @@ public class ExerciseFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_exercises, container, false);
         exercise_list = view.findViewById(R.id.exercise_list);
         exercise_list.setHasFixedSize(true);
-        setUpRecyclerView();
+//        setUpRecyclerView();
 
         return view;
     }
     public ExerciseFragment() {
     }
 
-    public void setUpRecyclerView(){
-        Query query = FirebaseDatabase.getInstance().getReference("exersice");
-
-        FirebaseRecyclerOptions<Exercise> options = new FirebaseRecyclerOptions.Builder<Exercise>()
-                .setQuery(query, Exercise.class)
-                .build();
-
-        adapter = new Adapter_Exercise(options);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        exercise_list.setLayoutManager(linearLayoutManager);
-        exercise_list.setAdapter(adapter);
-    }
+//    public void setUpRecyclerView(){
+//        Query query = FirebaseDatabase.getInstance().getReference("exersice");
+//
+//        FirebaseRecyclerOptions<Exercise> options = new FirebaseRecyclerOptions.Builder<Exercise>()
+//                .setQuery(query, Exercise.class)
+//                .build();
+//
+//        adapter = new Adapter_Exercise(options);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+//        exercise_list.setLayoutManager(linearLayoutManager);
+//        exercise_list.setAdapter(adapter);
+//    }
 
 //    @Override
 //    public void onStart() {

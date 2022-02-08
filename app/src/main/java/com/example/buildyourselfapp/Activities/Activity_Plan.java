@@ -20,13 +20,13 @@ public class Activity_Plan extends AppCompatActivity {
     private Intent intent ;
     private LinearLayout bulk_plan_layout ;
     private LinearLayout cut_plan_layout ;
-   // private UsersDAL userDAL;
+    private UsersDAL userDAL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
-       // intent = getIntent();
-        boolean isMen = UsersDAL.getInstance().getCurrentUser().getGender();
+        this.userDAL = UsersDAL.getInstance();
+        boolean isMen = userDAL.getCurrentUser().getGender();
         findView(isMen);
 
 
