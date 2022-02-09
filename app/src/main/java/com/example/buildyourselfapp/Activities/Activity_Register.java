@@ -24,10 +24,12 @@ public class Activity_Register extends AppCompatActivity  implements View.OnClic
     private EditText Name, email, password, height, weight;
     private CheckBox male, female;
     private final User user = new User();
+    private UsersDAL userDAL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        this.userDAL = UsersDAL.getInstance();
         findViews();
         initViews();
     }
@@ -64,20 +66,43 @@ public class Activity_Register extends AppCompatActivity  implements View.OnClic
                 break;
             case R.id.btn_register:
                 if (validateFields()) {
-                    if(UsersDAL.getInstance().Register(user) != null){
+                    this.userDAL.Register(user).addOnSuccessListener(suc -> {
+                        this.userDAL.setCurrentUser(user);
                         Toast.makeText(Activity_Register.this,
                                 "Register success!" ,Toast.LENGTH_SHORT).show();
 
-                                Log.d("TAJ","Register success!");
+                        Log.d("TAJ","Register success!");
                         startActivity(new Intent(Activity_Register.this, Activity_Plan.class));
-                    }
+                    }).addOnFailureListener(fail ->{
+                        Toast.makeText(Activity_Register.this,
+                                "Register Faild!" ,Toast.LENGTH_SHORT).show();
+                    });
+//                    if(this.userDAL.Register(user) != null){
+//                        Toast.makeText(Activity_Register.this,
+//                                "Register success!" ,Toast.LENGTH_SHORT).show();
+//
+//                                Log.d("TAJ","Register success!");
+//                        startActivity(new Intent(Activity_Register.this, Activity_Plan.class));
+//                    }else{
+//                        Toast.makeText(Activity_Register.this,
+//                                "Register Faild!" ,Toast.LENGTH_SHORT).show();
+//                    }
+                }else{
+                    Toast.makeText(Activity_Register.this,
+                            "Invalid input!" ,Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.checkbox_male:
                 user.setGender(true);
+                if(this.female.isChecked()){
+                    this.female.toggle();
+                }
                 break;
             case R.id.checkbox_female:
                 user.setGender(false);
+                if(this.male.isChecked()){
+                    this.male.toggle();
+                }
                 break;
             default:
                 break;
@@ -94,6 +119,10 @@ public class Activity_Register extends AppCompatActivity  implements View.OnClic
             email.setError("Valid email is required!");
             email.requestFocus();
             return false;
+        } else if (this.userDAL.isEmailExists(email.getText().toString())) {
+            email.setError("Email is already exists!");
+            email.requestFocus();
+        return false;
         } else if (TextUtils.isEmpty(weight.getText())) {
             password.setError("Password is required!");
             password.requestFocus();

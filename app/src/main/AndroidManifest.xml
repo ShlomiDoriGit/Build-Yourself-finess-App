@@ -26,6 +26,9 @@
         <activity
             android:name="com.example.buildyourselfapp.Activities.Activity_Meals"
             android:exported="false" />
+        <activity
+            android:name="com.example.buildyourselfapp.Activities.Activity_Exercise"
+            android:exported="false" />
 
         <activity
             android:name="com.example.buildyourselfapp.Activities.Activity_template"

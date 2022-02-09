@@ -6,24 +6,23 @@ public class Exercise {
 
     private String name;
     private String description;
-    private int    sets;
-    private int    reps;
+    private int sets;
+    private int reps;
     private String dayOfWorkout; // A or B
     private boolean genderExercise; // true for man ,false for woman
-    private Timer  timer ;
 
     public Exercise(){
     }
 
     public Exercise(String name, String description,
                     int sets, int reps, String dayOfWorkout,
-                    boolean genderExersice) {
+                    boolean genderExercise) {
         this.name = name;
         this.description = description;
         this.sets = sets;
         this.reps = reps;
         this.dayOfWorkout = dayOfWorkout;
-        this.genderExercise = genderExersice;
+        this.genderExercise = genderExercise;
     }
 
     public String getName() {
@@ -74,11 +73,4 @@ public class Exercise {
         this.genderExercise = genderExercise;
     }
 
-    public Timer getTimer() {
-        return timer;
-    }
-
-    public void setTimer(Timer timer) {
-        this.timer = timer;
-    }
 }

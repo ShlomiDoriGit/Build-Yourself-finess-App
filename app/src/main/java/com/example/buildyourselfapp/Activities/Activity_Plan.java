@@ -26,7 +26,7 @@ public class Activity_Plan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
         this.userDAL = UsersDAL.getInstance();
-        boolean isMen = userDAL.getCurrentUser().getGender();
+        boolean isMen = this.userDAL.getCurrentUser().getGender();
         findView(isMen);
 
 
@@ -38,18 +38,17 @@ public class Activity_Plan extends AppCompatActivity {
         bulk_plan_layout = findViewById(R.id.bulk_plan_layout);
         cut_plan_layout = findViewById(R.id.cut_plan_layout);
         if(!isMen){
-            cutImage.setImageResource(R.drawable.cut_w);
-            bulkImage.setImageResource(R.drawable.bulk_w);
+            cutImage.setBackgroundResource(R.drawable.cut_w);
+            bulkImage.setBackgroundResource(R.drawable.bulk_w);
         }
     }
-    public void editActions(View view, boolean isMen){
+    public void editActions(View view){
 
         cut_plan_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userDAL.setPlan(1);
                 Intent intent = new Intent(getApplicationContext(), Activity_Exercise.class);
-                intent.putExtra("plan", "cut");
-                intent.putExtra("gender", isMen); // men is true , woman false
                 startActivity(intent);
             }
         });
@@ -57,13 +56,9 @@ public class Activity_Plan extends AppCompatActivity {
         bulk_plan_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Inflater inflater = new Inflater();
-//                Intent intent = new Intent(getApplicationContext(), Activity_Exercise.class);
-//                intent.putExtra("plan", "bulk");
-//                intent.putExtra("gender", isMen); // men is true , woman false
-//                startActivity(intent);
- //               inflater.inflate(R.layout.fragment_exercises, , false);
-
+                userDAL.setPlan(2);
+                Intent intent = new Intent(getApplicationContext(), Activity_Exercise.class);
+                startActivity(intent);
             }
         });
     }

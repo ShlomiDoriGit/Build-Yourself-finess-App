@@ -11,13 +11,18 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.buildyourself.R;
+import com.example.buildyourselfapp.DAL.ExerciseDAL;
+import com.example.buildyourselfapp.DAL.MealDAL;
 import com.example.buildyourselfapp.DAL.UsersDAL;
+import com.example.buildyourselfapp.Models.Meal;
 
 public class Activity_Login extends AppCompatActivity implements View.OnClickListener {
 
     private Button register, login;
     private TextView email, password;
     private UsersDAL userDAL;
+    private MealDAL mealDAL;
+    private ExerciseDAL exerciseDAL;
 
 
     @Override
@@ -25,8 +30,16 @@ public class Activity_Login extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         this.userDAL = UsersDAL.getInstance();
+        this.mealDAL = MealDAL.getInstance();
+        this.exerciseDAL = ExerciseDAL.getInstance();
         findViews();
         initViews();
+
+
+        //Meal newMeal = new Meal("salad","hjdgfjhsdgf",300.0,330.0,330.0,300.0,1,0,http//......);
+        //this.mealDAL.addMealToDatabase(newMeal);
+
+        //this.exerciseDAL.addExerciseToDatabase(.....);
     }
 
 
@@ -56,7 +69,12 @@ public class Activity_Login extends AppCompatActivity implements View.OnClickLis
                 Log.d("TAJ", "emailTxt: " + emailTxt + " passwordTxt: " + passwordTxt);
 
                 if(userDAL.LogIn(emailTxt,passwordTxt)) {
-                    startActivity(new Intent(Activity_Login.this, Activity_Plan.class));
+                    int planTemp = this.userDAL.getCurrentUser().getPlan();
+                    if(planTemp==0) {
+                        startActivity(new Intent(Activity_Login.this, Activity_Plan.class));
+                    }else{
+                        startActivity(new Intent(Activity_Login.this, Activity_Meals.class));
+                    }
                 }
                 else{
                     Toast.makeText(Activity_Login.this, "Error, email or password incorrect!",

@@ -21,7 +21,7 @@
             <LinearLayout
                 android:id="@+id/meal1"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="200dp"
                 android:layout_weight="5"
                 android:orientation="vertical"
                 android:padding="10dp">
@@ -47,46 +47,16 @@
                         android:orientation="vertical"
                         android:padding="1.3dp">
                         <TextView
+                            android:id="@+id/meal1_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/sourcesanspro_regular"
+                            android:fontFamily="@font/sourcesanspro_bold"
                             android:gravity="center"
-                            android:text="A bulk is a period of eating in a strategic calorie surplus. the goal is to gain weight, primarily due to increased muscle mass."
+                            android:text="Name"
                             android:textColor="@color/dark_grey"
-                            android:textSize="15dp" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/meal2"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="5"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/layout_bg"
-                    android:orientation="horizontal"
-                    android:padding="3dp">
-
-                    <ImageView
-                        android:id="@+id/meal2_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.3"
-                        android:background="@drawable/bulk_w" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:padding="1.3dp">
+                            android:textSize="20dp" />
                         <TextView
+                            android:id="@+id/meal1_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/sourcesanspro_regular"
@@ -94,130 +64,26 @@
                             android:text="A bulk is a period of eating in a strategic calorie surplus. the goal is to gain weight, primarily due to increased muscle mass."
                             android:textColor="@color/dark_grey"
                             android:textSize="15dp" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/meal3"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="5"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/layout_bg"
-                    android:orientation="horizontal"
-                    android:padding="3dp">
-
-                    <ImageView
-                        android:id="@+id/meal3_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.3"
-                        android:background="@drawable/bulk_w" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:padding="1.3dp">
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/sourcesanspro_regular"
-                            android:gravity="center"
-                            android:text="A bulk is a period of eating in a strategic calorie surplus. the goal is to gain weight, primarily due to increased muscle mass."
-                            android:textColor="@color/dark_grey"
-                            android:textSize="15dp" />
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            >
+                            <TextView
+                                android:id="@+id/meal1_calories"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sourcesanspro_regular"
+                                android:text="\n\ncalories: 300          protein: 300\n\ncarbs: 300               fats: 300"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="10dp" />
+                        </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/meal4"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="5"
-                android:orientation="vertical"
-                android:padding="10dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/layout_bg"
-                    android:orientation="horizontal"
-                    android:padding="3dp">
-
-                    <ImageView
-                        android:id="@+id/meal4_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.3"
-                        android:background="@drawable/bulk_w" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:padding="1.3dp">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/sourcesanspro_regular"
-                            android:gravity="center"
-                            android:text="A bulk is a period of eating in a strategic calorie surplus. the goal is to gain weight, primarily due to increased muscle mass."
-                            android:textColor="@color/dark_grey"
-                            android:textSize="15dp" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/meal5"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="5"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/layout_bg"
-                    android:orientation="horizontal"
-                    android:padding="3dp">
-
-                    <ImageView
-                        android:id="@+id/meal5_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.3"
-                        android:background="@drawable/bulk_w" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:padding="1.3dp">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/sourcesanspro_regular"
-                            android:gravity="center"
-                            android:text="A bulk is a period of eating in a strategic calorie surplus. the goal is to gain weight, primarily due to increased muscle mass."
-                            android:textColor="@color/dark_grey"
-                            android:textSize="15dp" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </LinearLayout>
 
         </LinearLayout>
 

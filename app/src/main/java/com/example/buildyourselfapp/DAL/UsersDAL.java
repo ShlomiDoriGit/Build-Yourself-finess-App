@@ -36,7 +36,9 @@ public class UsersDAL {
     {
         if(_user != null){
             if(!this.isEmailExists(_user.getEmail())){
-                return this.mDatabase.child(_user.getUsername()).setValue(_user);
+                int id = this.allUsers.size();
+                _user.setId(id);
+                return this.mDatabase.child(String.valueOf(id)).setValue(_user);
             }
         }
         return null;
@@ -48,16 +50,18 @@ public class UsersDAL {
                 password.equals(user.getPassword())).
                 findFirst().
                 orElse(null);
-        Log.d("UsersDAL.listenToUsers", String.valueOf(this.currentUser));
-        Log.d("UsersDAL.listenToUsers", String.valueOf(this.allUsers));
         return this.currentUser!=null?true:false;
     }
 
-    private Boolean isEmailExists(String email){
+    public Boolean isEmailExists(String email){
         User temp = this.allUsers.stream().
                 filter(user -> email.equals(user.getEmail())).
                 findFirst().orElse(null);
         return temp!=null?true:false;
+    }
+
+    public void setPlan(int plan){
+        this.mDatabase.child(String.valueOf(this.currentUser.getId())).child("plan").setValue(plan);
     }
 
     private void listenToUsers(){
@@ -67,9 +71,7 @@ public class UsersDAL {
                 allUsers.clear();
                 for (DataSnapshot snp: snapshot.getChildren()) {
                     allUsers.add(snp.getValue(User.class));
-                    Log.d("UsersDAL.listenToUsers@@@@@@@@@@@@@", String.valueOf(snp.getValue(User.class)));
                 }
-
             }
 
             @Override
