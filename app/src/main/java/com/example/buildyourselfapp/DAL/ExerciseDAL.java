@@ -5,7 +5,6 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.buildyourselfapp.Models.Exercise;
-import com.example.buildyourselfapp.Models.Meal;
 import com.example.buildyourselfapp.Models.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,9 +33,9 @@ public class ExerciseDAL {
         return instance;
     }
 
-    public void addExerciseToDatabase(Exercise meal){
+    public void addExerciseToDatabase(Exercise exercise){
         int id = this.allExercises.size();
-        this.mDatabase.child(String.valueOf(id)).setValue(meal);
+        this.mDatabase.child(String.valueOf(id)).setValue(exercise);
     }
 
     private void listenToExercises(){

@@ -1,7 +1,5 @@
 package com.example.buildyourselfapp.Models;
 
-import java.util.Timer;
-
 public class Exercise {
 
     private String name;
@@ -10,19 +8,28 @@ public class Exercise {
     private int reps;
     private String dayOfWorkout; // A or B
     private boolean genderExercise; // true for man ,false for woman
-
+    private String url;
     public Exercise(){
     }
 
     public Exercise(String name, String description,
                     int sets, int reps, String dayOfWorkout,
-                    boolean genderExercise) {
+                    boolean genderExercise,String url) {
         this.name = name;
         this.description = description;
         this.sets = sets;
         this.reps = reps;
         this.dayOfWorkout = dayOfWorkout;
         this.genderExercise = genderExercise;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getName() {
