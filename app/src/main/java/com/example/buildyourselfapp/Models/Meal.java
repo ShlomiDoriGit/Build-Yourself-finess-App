@@ -4,19 +4,21 @@ public class Meal {
 
     private String name;
     private String description;
-    private Double calories;
-    private Double protein;
-    private Double carbs;
-    private Double fat;
+    private int calories;
+    private int protein;
+    private int carbs;
+    private int fat;
     private int plan; // 1 for cut, 2 for bulk
     private int numberOfMeal;
     private String url;
+    private boolean gender ; // true for man for for woman
 
 
     public Meal() {
     }
 
-    public Meal(String name, String description, Double calories, Double protein, Double carbs, Double fat, int plan, int numberOfMeal, String url) {
+    public Meal(String name, String description, int calories, int protein, int carbs,
+                int fat, int plan, int numberOfMeal, String url , boolean gender) {
         this.name = name;
         this.description = description;
         this.calories = calories;
@@ -26,6 +28,7 @@ public class Meal {
         this.plan = plan;
         this.numberOfMeal = numberOfMeal;
         this.url = url;
+        this.gender = gender ;
     }
 
     public String getName() {
@@ -44,36 +47,44 @@ public class Meal {
         this.description = description;
     }
 
-    public Double getCalories() {
+    public int getCalories() {
         return calories;
     }
 
-    public void setCalories(Double calories) {
+    public void setCalories(int calories) {
         this.calories = calories;
     }
 
-    public Double getProtein() {
+    public int getProtein() {
         return protein;
     }
 
-    public void setProtein(Double protein) {
+    public void setProtein(int protein) {
         this.protein = protein;
     }
 
-    public Double getCarbs() {
+    public int getCarbs() {
         return carbs;
     }
 
-    public void setCarbs(Double carbs) {
+    public void setCarbs(int carbs) {
         this.carbs = carbs;
     }
 
-    public Double getFat() {
+    public int getFat() {
         return fat;
     }
 
-    public void setFat(Double fat) {
+    public void setFat(int fat) {
         this.fat = fat;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
     }
 
     public int getNumberOfMeal() {
