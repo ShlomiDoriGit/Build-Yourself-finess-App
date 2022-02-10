@@ -33,9 +33,10 @@ public class ExerciseDAL {
         return instance;
     }
 
-    public void addExerciseToDatabase(Exercise exercise){
-        int id = this.allExercises.size();
-        this.mDatabase.child(String.valueOf(id)).setValue(exercise);
+    public void addExerciseToDatabase(ArrayList<Exercise> exercise){
+        for (int i = 0; i < exercise.size(); i++) {
+            this.mDatabase.child(String.valueOf(i)).setValue(exercise.get(i));
+        }
     }
 
     private void listenToExercises(){

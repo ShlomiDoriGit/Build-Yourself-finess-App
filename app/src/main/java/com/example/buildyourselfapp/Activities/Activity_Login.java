@@ -16,6 +16,8 @@ import com.example.buildyourselfapp.DAL.MealDAL;
 import com.example.buildyourselfapp.DAL.UsersDAL;
 import com.example.buildyourselfapp.Models.Exercise;
 
+import java.util.ArrayList;
+
 public class Activity_Login extends AppCompatActivity implements View.OnClickListener {
 
     private Button register, login;
@@ -38,7 +40,6 @@ public class Activity_Login extends AppCompatActivity implements View.OnClickLis
 
         //Meal newMeal = new Meal("salad","hjdgfjhsdgf",300.0,330.0,330.0,300.0,1,0,http//......);
         //this.mealDAL.addMealToDatabase(newMeal);
-        addExerciseForMan();
         addExerciseForWoman();
         //this.exerciseDAL.addExerciseToDatabase(.....);
     }
@@ -112,138 +113,131 @@ public class Activity_Login extends AppCompatActivity implements View.OnClickLis
                 3,12,"B",false,
                 "https://i.pinimg.com/originals/f8/ce/55/f8ce55f3b09598ddf9f598d0cc455255.png");
 
-
-        exerciseDAL.addExerciseToDatabase(exercise1);
-        exerciseDAL.addExerciseToDatabase(exercise2);
-        exerciseDAL.addExerciseToDatabase(exercise3);
-        exerciseDAL.addExerciseToDatabase(exercise4);
-        exerciseDAL.addExerciseToDatabase(exercise5);
-        exerciseDAL.addExerciseToDatabase(exercise6);
-        exerciseDAL.addExerciseToDatabase(exercise7);
-        exerciseDAL.addExerciseToDatabase(exercise8);
-        exerciseDAL.addExerciseToDatabase(exercise9);
-        exerciseDAL.addExerciseToDatabase(exercise10);
-        exerciseDAL.addExerciseToDatabase(exercise11);
-        exerciseDAL.addExerciseToDatabase(exercise12);
-        exerciseDAL.addExerciseToDatabase(exercise13);
-    }
-
-    private void addExerciseForMan() {
-       // Meal newMeal = new Meal("salad","hjdgfjhsdgf",300.0,330.0,330.0,300.0,1,0,"http//......");
-     //   mealDAL.addMealToDatabase(newMeal);
-        //Exercise(String name, String description,
-        //                    int sets, int reps, String dayOfWorkout,
-        //                    boolean genderExercise,String url)
-        ///////////////////////////////////man ////////////////////////////////////////////////////////
-        Exercise exercise1 = new Exercise("Squat",
+        Exercise exercise14 = new Exercise("Squat",
                 "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
                 5,12,"A",true,
                 "https://upload.wikimedia.org/wikipedia/commons/8/82/Squats.svg");
 
-        Exercise exercise2 = new Exercise("Leg extension",
+        Exercise exercise15 = new Exercise("Leg extension",
                 " is a type of strength training exercise. It's an excellent move for strengthening your quadriceps, which are in the front of your upper legs.",
                 3,12,"A",true,
                 "https://www.burnthefatinnercircle.com/members/images/1636.jpg");
 
-        Exercise exercise3 = new Exercise("Leg curl",
+        Exercise exercise16 = new Exercise("Leg curl",
                 "The hamstring curl, also called a leg curl, is an exercise that strengthens the hamstrings",
                 4,12,"A",true,
                 "https://www.burnthefatinnercircle.com/members/images/1255.jpg");
 
-        Exercise exercise4 = new Exercise("Bench press",
+        Exercise exercise17 = new Exercise("Bench press",
                 "T a lift or exercise in which a weight is raised by extending the arms upward while lying on a bench.",
                 4,12,"A",true,
                 "https://s3.amazonaws.com/prod.skimble/assets/2289486/image_iphone.jpg");
 
-        Exercise exercise5 = new Exercise("Bench press upper",
+        Exercise exercise18 = new Exercise("Bench press upper",
                 "is an upper-body weight training exercise in which the trainee presses a weight upwards while lying on a weight training bench.",
                 4,12,"A",true,
                 "https://dagodsfitnesshome.files.wordpress.com/2019/03/1669.jpg");
 
-        Exercise exercise6 = new Exercise("Chest fly",
+        Exercise exercise19 = new Exercise("Chest fly",
                 "The dumbbell chest fly is an upper body exercise that can help to strengthen the chest and shoulders.",
                 4,15,"A",true,
                 "https://www.burnthefatinnercircle.com/members/images/1528.jpg");
-        Exercise exercise7 = new Exercise("Triceps PushDown one arm",
+        Exercise exercise20 = new Exercise("Triceps PushDown one arm",
                 "Slowly extend your arm down, keeping your elbow at your side, until your forearm and hand reaches your upper thigh",
                 3,12,"A",true,
                 "https://images.squarespace-cdn.com/content/v1/55e406fbe4b0b03c5e7543ae/1493080062990-1M7JZD70PLB89376H6ZX/One+Arm+Cable+Triceps+Pushdowns+%28Reverse+Grip%29");
 
-        Exercise exercise8 = new Exercise("Triceps pushDown",
+        Exercise exercise21 = new Exercise("Triceps pushDown",
                 "A tricep pushdown is an isolation exercise designed to target your triceps muscles.",
                 3,12,"A",true,
                 "https://global-uploads.webflow.com/5d1d0d3f53ced35a29dbe169/5de7af82dd80e669098c020a_tricep-pushdown-anabolic-aliens.jpg");
 
-        Exercise exercise9 = new Exercise("Triceps Extension",
+        Exercise exercise22 = new Exercise("Triceps Extension",
                 "The Triceps Extension is an isolation movement that helps develop and strengthen the triceps",
                 3,12,"A",true,
                 "https://www.burnthefatinnercircle.com/members/images/1622.jpg");
 
         /////////////////////////////////B////////////////////////////////////////////////////////////////////
-        Exercise exercise10 = new Exercise("Pull down",
+        Exercise exercise23 = new Exercise("Pull down",
                 "The pulldown exercise works the back muscles and is performed at a workstation with adjustable resistance, usually plates.",
                 4,12,"B",true,
                 "https://weighttraining.guide/wp-content/uploads/2016/05/wide-grip-lat-pull-down-resized.png");
 
-        Exercise exercise11 = new Exercise("Behind the neck lat pullDown",
+        Exercise exercise24 = new Exercise("Behind the neck lat pullDown",
                 "can be performed either standing up or sat down. To do them, you start facing the machine and then reach up to grip the handles",
                 4,12,"B",true,
                 "https://i0.wp.com/24legworkouts.com/wp-content/uploads/2021/07/behind-the-neck-lat-pulldown.jpg?resize=300%2C203&ssl=1");
 
-        Exercise exercise12 = new Exercise("Seated cable row",
+        Exercise exercise25 = new Exercise("Seated cable row",
                 "is a compound exercise that utilizes a weighted horizontal cable row machine to work muscle groups in your back and arms",
                 4,12,"B",true,
                 "https://s3.amazonaws.com/prod.skimble/assets/1816205/image_iphone.jpg");
 
-        Exercise exercise13 = new Exercise("Cabal one arm literal raise",
+        Exercise exercise26 = new Exercise("Cabal one arm literal raise",
                 " Is a shoulder exercise that targets the medial or middle head of the deltoid muscle.",
                 3,12,"B",true,
                 "https://www.burnthefatinnercircle.com/members/images/1656.jpg");
 
-        Exercise exercise14 = new Exercise("Dumbbell Shoulder press",
-          "known as a dumbbell shoulder press, is a weightlifting exercise that targets muscles throughout your body"
+        Exercise exercise27 = new Exercise("Dumbbell Shoulder press",
+                "known as a dumbbell shoulder press, is a weightlifting exercise that targets muscles throughout your body"
                 ,3,12,"B",true,
                 "https://s3.amazonaws.com/prod.skimble/assets/1904357/image_iphone.jpg");
 
-        Exercise exercise15 = new Exercise("Revers cable crossover",
+        Exercise exercise28 = new Exercise("Revers cable crossover",
                 "Grip the handle, across your body in a neutral grip, with both hands. Keeping only a slight bend at your elbow, pull the cable back across your body using the muscles in your back.",
                 3,12,"B",true,
                 "https://i.pinimg.com/originals/90/16/b8/9016b8476acd327cecdb20e84c27910c.jpg");
 
-        Exercise exercise16 = new Exercise("One arm dumbbell preacher curl",
+        Exercise exercise29 = new Exercise("One arm dumbbell preacher curl",
                 "Curl the dumbbell in towards your chin and upper chest in a single smooth arc. Hold for a count of one while squeezing your biceps.",
                 3,12,"B",true,
                 "https://st2.depositphotos.com/8546304/11422/i/950/depositphotos_114227956-stock-photo-one-arm-dumbbell-preacher-curl.jpg");
 
-        Exercise exercise17 = new Exercise("Biceps curl",
+        Exercise exercise30 = new Exercise("Biceps curl",
                 "an exercise in which you bend your arm towards your body at the elbow in order to make your biceps",
                 3,12,"B",true,
                 "https://i.pinimg.com/originals/f8/ce/55/f8ce55f3b09598ddf9f598d0cc455255.png");
 
-        Exercise exercise18 = new Exercise("Hammer curls",
+        Exercise exercise31 = new Exercise("Hammer curls",
                 "A hammer curl is a variation of the biceps curl and targets muscles in the upper and lower arm.",
                 4,12,"B",true,
                 "https://cdn.shopify.com/s/files/1/1876/4703/files/shutterstock_419477203_480x480.jpg?v=1636560233");
 
-        exerciseDAL.addExerciseToDatabase(exercise1);
-        exerciseDAL.addExerciseToDatabase(exercise2);
-        exerciseDAL.addExerciseToDatabase(exercise3);
-        exerciseDAL.addExerciseToDatabase(exercise4);
-        exerciseDAL.addExerciseToDatabase(exercise5);
-        exerciseDAL.addExerciseToDatabase(exercise6);
-        exerciseDAL.addExerciseToDatabase(exercise7);
-        exerciseDAL.addExerciseToDatabase(exercise8);
-        exerciseDAL.addExerciseToDatabase(exercise9);
-        exerciseDAL.addExerciseToDatabase(exercise10);
-        exerciseDAL.addExerciseToDatabase(exercise11);
-        exerciseDAL.addExerciseToDatabase(exercise12);
-        exerciseDAL.addExerciseToDatabase(exercise13);
-        exerciseDAL.addExerciseToDatabase(exercise14);
-        exerciseDAL.addExerciseToDatabase(exercise15);
-        exerciseDAL.addExerciseToDatabase(exercise16);
-        exerciseDAL.addExerciseToDatabase(exercise17);
-        exerciseDAL.addExerciseToDatabase(exercise18);
+        ArrayList<Exercise> arrEx = new ArrayList<>();
+        arrEx.add(exercise1);
+        arrEx.add(exercise2);
+        arrEx.add(exercise3);
+        arrEx.add(exercise4);
+        arrEx.add(exercise5);
+        arrEx.add(exercise6);
+        arrEx.add(exercise7);
+        arrEx.add(exercise8);
+        arrEx.add(exercise9);
+        arrEx.add(exercise10);
+        arrEx.add(exercise11);
+        arrEx.add(exercise12);
+        arrEx.add(exercise13);
+        arrEx.add(exercise14);
+        arrEx.add(exercise15);
+        arrEx.add(exercise16);
+        arrEx.add(exercise17);
+        arrEx.add(exercise18);
+        arrEx.add(exercise19);
+        arrEx.add(exercise20);
+        arrEx.add(exercise21);
+        arrEx.add(exercise22);
+        arrEx.add(exercise23);
+        arrEx.add(exercise24);
+        arrEx.add(exercise25);
+        arrEx.add(exercise26);
+        arrEx.add(exercise27);
+        arrEx.add(exercise28);
+        arrEx.add(exercise29);
+        arrEx.add(exercise30);
+        arrEx.add(exercise31);
+        this.exerciseDAL.addExerciseToDatabase(arrEx);
     }
+
 
     private void findViews() {
         //Edit Texts

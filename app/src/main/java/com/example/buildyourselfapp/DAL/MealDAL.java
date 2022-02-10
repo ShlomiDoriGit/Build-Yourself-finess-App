@@ -34,9 +34,10 @@ public class MealDAL {
         return instance;
     }
 
-    public void addMealToDatabase(Meal meal){
-        int id = this.allMeals.size();
-        this.mDatabase.child(String.valueOf(id)).setValue(meal);
+    public void addMealToDatabase(ArrayList<Meal> meal){
+        for (int i = 0; i < meal.size(); i++) {
+            this.mDatabase.child(String.valueOf(i)).setValue(meal);
+        }
     }
 
     private void listenToMeals(){
