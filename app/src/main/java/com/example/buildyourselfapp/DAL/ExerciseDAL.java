@@ -13,6 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.stream.Collectors;
 
 public class ExerciseDAL {
@@ -59,7 +60,16 @@ public class ExerciseDAL {
 
     public ArrayList<Exercise> getExercisesForUser(User user){
         ArrayList<Exercise> arr = new ArrayList<Exercise>();
-        arr.addAll(this.allExercises.stream().filter( exercise -> exercise.isGenderExercise() == user.getGender()).collect(Collectors.toList()));
+        String planByDay = this.getPlanByDay();
+        arr.addAll(this.allExercises.stream().filter( exercise -> exercise.isGenderExercise() == user.getGender() && exercise.getDayOfWorkout().equalsIgnoreCase(planByDay)).collect(Collectors.toList()));
         return arr;
+    }
+
+    private String getPlanByDay() {
+        String retval = "";
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        retval = day%2==0?"A":"B"; //for odd day returns B else A
+        return retval;
     }
 }

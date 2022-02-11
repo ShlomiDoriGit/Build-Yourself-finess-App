@@ -57,6 +57,7 @@ android:background="@drawable/bg_png"
             android:paddingBottom="16dp"
             >
             <ImageButton
+                android:id="@+id/btn_exercise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/dumbell_grey"/>
@@ -71,6 +72,7 @@ android:background="@drawable/bg_png"
             android:paddingBottom="16dp"
             >
             <ImageButton
+                android:id="@+id/btn_plan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/menu_grey"/>

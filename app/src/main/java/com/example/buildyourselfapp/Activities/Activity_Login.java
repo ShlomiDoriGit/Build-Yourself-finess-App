@@ -40,8 +40,9 @@ public class Activity_Login extends AppCompatActivity implements View.OnClickLis
        // addExerciseForWoman();
         //this.exerciseDAL.addExerciseToDatabase(.....);
       //  addMeal();
+
     }
-//    private void addMeal() {
+    private void addMeal() {
 //        ArrayList<Meal> arrMeals = new ArrayList<>();
 //        arrMeals.add( new Meal("Chicken breast in lemon and honey marinade","Ingredients: 500 grams of fresh chicken breast before cooking Lemon juice from a little lemon A tablespoon of honey Chopped garlic clove Half a teaspoon of paprika Half a cup of chopped coriander A quarter teaspoon of salt",
 //                218,35,7,4,1,3,
@@ -134,8 +135,9 @@ public class Activity_Login extends AppCompatActivity implements View.OnClickLis
 //                "https://saharkazes.co.il/wp-content/uploads/2021/07/%D7%97%D7%96%D7%94-%D7%A2%D7%95%D7%A3-%D7%95%D7%9C%D7%99%D7%9E%D7%95%D7%9F.jpg",false));
 //
 //        mealDAL.addMealToDatabase(arrMeals);
-//    }
-//    private void addExerciseForWoman() {
+    }
+
+   private void addExerciseForWoman() {
 //        Exercise exercise1 = new Exercise("Squat",
 //                "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
 //                5,12,"A",false,
@@ -381,7 +383,7 @@ public class Activity_Login extends AppCompatActivity implements View.OnClickLis
 //        arrEx.add(exercise40);
 //
 //        this.exerciseDAL.addExerciseToDatabase(arrEx);
-//    }
+    }
 
 
     private void findViews() {
@@ -414,7 +416,7 @@ public class Activity_Login extends AppCompatActivity implements View.OnClickLis
                     if(planTemp==0) {
                         startActivity(new Intent(Activity_Login.this, Activity_Plan.class));
                     }else{
-                        startActivity(new Intent(Activity_Login.this, Activity_Meals.class));
+                        startActivity(new Intent(Activity_Login.this, Activity_Exercise.class));
                     }
                 }
                 else{
