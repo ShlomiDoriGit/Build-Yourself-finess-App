@@ -52,7 +52,7 @@ public class Activity_Exercise extends AppCompatActivity {
 
     }
     public void timerStart(long timeLengthMilli){
-        this.timer = new CountDownTimer((timeLengthMilli+2)*1000, 1000){
+        this.timer = new CountDownTimer((timeLengthMilli)*1000, 1000){
             public void onTick(long millisUntilFinished){
                 int minutes = (counter % 3600) / 60;
                 int seconds = counter % 60;

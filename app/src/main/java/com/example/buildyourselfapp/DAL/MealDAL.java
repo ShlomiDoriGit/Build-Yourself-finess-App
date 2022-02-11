@@ -60,7 +60,7 @@ public class MealDAL {
 
     public ArrayList<Meal> getMealsForUser(User user){
         ArrayList<Meal> arr = new ArrayList<Meal>();
-        arr.addAll(this.allMeals.stream().filter( meal -> meal.getPlan() == user.getPlan()).collect(Collectors.toList()));
+        arr.addAll(this.allMeals.stream().filter( meal -> meal.getPlan() == user.getPlan() && meal.isGender() == user.getGender()).collect(Collectors.toList()));
         return arr;
     }
 }

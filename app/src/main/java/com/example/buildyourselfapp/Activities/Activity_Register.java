@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.buildyourself.R;
 import com.example.buildyourselfapp.DAL.UsersDAL;
 import com.example.buildyourselfapp.Models.User;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Activity_Register extends AppCompatActivity  implements View.OnClickListener {
 
@@ -25,10 +26,13 @@ public class Activity_Register extends AppCompatActivity  implements View.OnClic
     private CheckBox male, female;
     private final User user = new User();
     private UsersDAL userDAL;
+    private FirebaseAuth fAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        fAuth = FirebaseAuth.getInstance();
         this.userDAL = UsersDAL.getInstance();
         findViews();
         initViews();
@@ -67,26 +71,25 @@ public class Activity_Register extends AppCompatActivity  implements View.OnClic
             case R.id.btn_register:
                 if (validateFields()) {
                     this.userDAL.Register(user).addOnSuccessListener(suc -> {
-                        this.userDAL.setCurrentUser(user);
-                        Toast.makeText(Activity_Register.this,
-                                "Register success!" ,Toast.LENGTH_SHORT).show();
+                        fAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword()).addOnSuccessListener(s->{
+                            this.userDAL.setCurrentUser(user);
+                            Toast.makeText(Activity_Register.this,
+                                    "Register success!" ,Toast.LENGTH_SHORT).show();
 
-                        Log.d("TAJ","Register success!");
-                        startActivity(new Intent(Activity_Register.this, Activity_Plan.class));
+                            Log.d("TAJ","Register success!");
+                            startActivity(new Intent(Activity_Register.this, Activity_Plan.class));
+                        }).addOnFailureListener(fail->{
+                            //delete usser
+                            this.userDAL.deleteUser(user);
+                            Log.e("@@@@@@@ REGISTER FAILD @@@@@@@@",fail.getMessage().toString());
+                            Toast.makeText(Activity_Register.this,
+                                    fail.getMessage() ,Toast.LENGTH_SHORT).show();
+                        });
+
                     }).addOnFailureListener(fail ->{
                         Toast.makeText(Activity_Register.this,
-                                "Register Faild!" ,Toast.LENGTH_SHORT).show();
+                                fail.getMessage() ,Toast.LENGTH_SHORT).show();
                     });
-//                    if(this.userDAL.Register(user) != null){
-//                        Toast.makeText(Activity_Register.this,
-//                                "Register success!" ,Toast.LENGTH_SHORT).show();
-//
-//                                Log.d("TAJ","Register success!");
-//                        startActivity(new Intent(Activity_Register.this, Activity_Plan.class));
-//                    }else{
-//                        Toast.makeText(Activity_Register.this,
-//                                "Register Faild!" ,Toast.LENGTH_SHORT).show();
-//                    }
                 }else{
                     Toast.makeText(Activity_Register.this,
                             "Invalid input!" ,Toast.LENGTH_SHORT).show();

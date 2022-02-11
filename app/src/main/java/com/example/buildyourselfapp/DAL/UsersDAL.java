@@ -53,6 +53,10 @@ public class UsersDAL {
         return this.currentUser!=null?true:false;
     }
 
+    public void deleteUser(User _user){
+        this.mDatabase.child(String.valueOf(_user.getId())).removeValue();
+    }
+
     public Boolean isEmailExists(String email){
         User temp = this.allUsers.stream().
                 filter(user -> email.equals(user.getEmail())).
@@ -62,6 +66,7 @@ public class UsersDAL {
 
     public void setPlan(int plan){
         this.mDatabase.child(String.valueOf(this.currentUser.getId())).child("plan").setValue(plan);
+        this.currentUser.setPlan(plan);
     }
 
     private void listenToUsers(){
