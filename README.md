@@ -1,9 +1,9 @@
 # Build-Yourself-finess-App
-Android Fitness App that contains wprkout plans and meals plan for man and woman . 
+Android Fitness App that contains workout plans and meals plan for man and woman. 
 The app write in JAVA in Android Studio . 
 The app use Firebase Authentication and Firebase Realtime Database . 
 
-The main idea of the App is Build a training program for the user that will help him progress. 
+The main idea of the App is Build a training program for the user that will help him to progress. 
 In addition, the user gets a customized menu that includes images, ingredients, and values such as calories,
 protein, fat, and carbohydrates.
 The programs are tailored to the gender of the user.
