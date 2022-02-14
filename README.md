@@ -15,13 +15,13 @@ Link for a demo video with an explanation in google Drive :
 
 https://drive.google.com/file/d/1TWd00U3SdklN6lSBB6R3OSHb4PRTYPqP/view?usp=drivesdk
 
-![image](https://user-images.githubusercontent.com/97397382/153913770-aa0f7f68-649e-4331-952b-4ff1c7e19d45.png)
+![image](https://user-images.githubusercontent.com/97397382/153913770-aa0f7f68-649e-4331-952b-4ff1c7e19d45.png)   ![image](https://user-images.githubusercontent.com/97397382/153913885-afa2a501-5730-478e-9f18-6c6a6c0820f2.png)
 
-![image](https://user-images.githubusercontent.com/97397382/153913885-afa2a501-5730-478e-9f18-6c6a6c0820f2.png)
 
-![image](https://user-images.githubusercontent.com/97397382/153913926-5c4eaa79-a6be-4dcb-bb24-e534909f8a3c.png)
 
-![image](https://user-images.githubusercontent.com/97397382/153913967-7239ff6b-2256-4bd2-ab1f-a729f77552a7.png)
+![image](https://user-images.githubusercontent.com/97397382/153913926-5c4eaa79-a6be-4dcb-bb24-e534909f8a3c.png) ![image](https://user-images.githubusercontent.com/97397382/153913967-7239ff6b-2256-4bd2-ab1f-a729f77552a7.png)
+
+
 
 ![image](https://user-images.githubusercontent.com/97397382/153914785-25967e23-c364-4784-ae18-78428411fd05.png)
 
